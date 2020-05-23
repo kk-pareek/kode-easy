@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+unordered_map<string, string> mm;
+
+void Given()
+{
+    mm["purple"] = "Power";    mm["blue"]   = "Space";
+    mm["orange"] = "Soul";     mm["green"]  = "Time";
+    mm["red"]    = "Reality";  mm["yellow"] = "Mind";
+}
+
+int main()
+{
+    Given();
+    int n; cin >> n; string s;
+    
+    unordered_map<string, bool> m;
+    for(int i = 0; i < n; ++i) cin >> s, m[s]=1;
+    
+    cout << (6-n) << "\n";
+    for(auto x: mm) if(m.find(x.first) == m.end()) cout << x.second << "\n";
+}
